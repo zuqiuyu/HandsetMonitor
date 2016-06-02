@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/juzhong"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nephritis"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <!-- SpO2 -->
+	<LinearLayout
+		android:layout_weight="0.2"
+		android:id="@+id/llsf"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="开始"
+			android:id="@+id/start"
+			/>
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="关闭"
+			android:id="@+id/finish"
+			/>
+	</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rlSpO2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/nephritis"
+        android:gravity="top"
+        android:paddingBottom="15dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="15dp" >
+        <include layout="@layout/spo2"/>
+    </RelativeLayout>
+    <!--divide-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:orientation="horizontal"
+        android:paddingTop="1dp"
+	    android:paddingBottom="1dp">
+        <View 
+	        android:layout_width="match_parent"
+	        android:layout_height="1dp"
+	        android:background="@color/white"
+	        android:id="@+id/vwDevider0"/>
+    </LinearLayout>
+
+    <LinearLayout
+		android:layout_weight="0.5"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="center"
+        android:id="@+id/llNTC">
+
+	     <!-- BT & Config & record -->      
+	     <LinearLayout
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content"
+	         android:id="@+id/llBCR"
+	         android:layout_weight="1"
+	         android:padding="10dp"
+	         android:background="@color/nephritis"
+	         android:orientation="horizontal"
+	         android:gravity="center"
+	         android:baselineAligned="false">
+
+	         <LinearLayout 
+	             android:layout_height="match_parent"
+	             android:layout_width="0dp"
+	             android:gravity="center"
+	             android:layout_weight="1.0"
+	             android:id="@+id/llBT">
+	             <include layout="@layout/bluetooth"/>
+	         </LinearLayout>
+	         
+	         <LinearLayout 
+	             android:layout_height="match_parent"
+	             android:layout_width="0dp"
+	             android:gravity="center"
+	             android:layout_weight="1.0"
+	             android:id="@+id/llRCD">
+	             <include layout="@layout/record"/>
+	         </LinearLayout>
+	         
+	         <LinearLayout 
+	             android:layout_height="match_parent"
+	             android:layout_width="0dp"
+	             android:gravity="center"
+	             android:layout_weight="1.0"
+                 android:id="@+id/llCFG">
+	             <include layout="@layout/config"/>
+	         </LinearLayout>
+	         
+	     </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+</RelativeLayout>
